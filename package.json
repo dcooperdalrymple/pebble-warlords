@@ -1,0 +1,33 @@
+{
+    "author": "Cooper Dalrymple",
+    "dependencies": {},
+    "keywords": [],
+    "name": "warlords",
+    "pebble": {
+        "displayName": "Warlords",
+        "enableMultiJS": true,
+        "messageKeys": [],
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/shield_green.png",
+                    "name": "IMAGE_SHIELD_GREEN",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "aplite",
+            "basalt",
+            "chalk"
+        ],
+        "uuid": "040cca61-306c-4820-b3d4-7a9e939f0892",
+        "watchapp": {
+            "watchface": false
+        }
+    },
+    "version": "1.0.0"
+}

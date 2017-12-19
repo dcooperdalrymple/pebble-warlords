@@ -1,0 +1,33 @@
+{
+    "targetPlatforms": [
+        "aplite", 
+        "basalt", 
+        "chalk"
+    ], 
+    "projectType": "native", 
+    "name": "warlords", 
+    "messageKeys": {}, 
+    "companyName": "Cooper Dalrymple", 
+    "enableMultiJS": true, 
+    "versionLabel": "1.0", 
+    "capabilities": [], 
+    "sdkVersion": "3", 
+    "appKeys": {}, 
+    "longName": "Warlords", 
+    "displayName": "Warlords", 
+    "shortName": "Warlords", 
+    "watchapp": {
+        "watchface": false
+    }, 
+    "resources": {
+        "media": [
+            {
+                "targetPlatforms": null, 
+                "type": "bitmap", 
+                "name": "IMAGE_SHIELD_GREEN", 
+                "file": "images/shield_green.png"
+            }
+        ]
+    }, 
+    "uuid": "040cca61-306c-4820-b3d4-7a9e939f0892"
+}
