@@ -2,18 +2,28 @@
 
 // Constants
 
+#define Player_Count 4
 #define Player_TopLeft 0
 #define Player_TopRight 1
 #define Player_BottomLeft 2
 #define Player_BottomRight 3
+#define Player_User Player_BottomLeft
 #define Player_PosRange 100
 #define Player_AngleGap 10
 
 #define Canvas_Width PBL_DISPLAY_WIDTH
 #define Canvas_Height PBL_DISPLAY_HEIGHT
 
+#if defined(PBL_PLATFORM_EMERY)
 #define Base_Size 8
 #define Base_Inner_Size 4
+#elif defined(PBL_PLATFORM_CHALK)
+#define Base_Size 8
+#define Base_Inner_Size 6
+#else
+#define Base_Size 6
+#define Base_Inner_Size 4
+#endif
 
 // Structs
 
@@ -29,12 +39,13 @@ Layer *game_canvas;
 // Game Logic
 GColor base_colors[4];
 
-float player_pos[4]; // 0.0 -> 100.0
+float player_pos[Player_Count]; // 0.0 -> 100.0
 const float player_speed = 2.5;
-GColor player_colors[4];
+GColor player_colors[Player_Count];
+bool player_alive[Player_Count];
 
 #if defined(PBL_PLATFORM_EMERY)
-uint8_t player_damage[4][8] = {
+uint8_t player_damage[Player_Count][8] = {
     { // TopLeft
         0b11110000, // 0
         0b11110000, // 1
@@ -74,7 +85,7 @@ uint8_t player_damage[4][8] = {
     }
 };
 #elif defined(PBL_PLATFORM_CHALK)
-uint8_t player_damage[4][8] = {
+uint8_t player_damage[Player_Count][8] = {
     { // TopLeft
         0b11000000, // 0
         0b11000000, // 1
@@ -114,7 +125,7 @@ uint8_t player_damage[4][8] = {
     }
 };
 #else
-uint8_t player_damage[4][8] = {
+uint8_t player_damage[Player_Count][8] = {
     { // TopLeft
         0b00110000, // 0
         0b00110000, // 1
@@ -204,6 +215,8 @@ const uint16_t sprite_castle[16] = {
     0b0000111111110000, // 14
     0b0000000000000000  // 15
 };
+
+#if defined(PBL_PLATFORM_EMERY)
 const uint16_t sprite_player[8][16] = { // Rotation 0 -> 359 = 0 -> 7
     {    // 0 = right
         0b0011111111000000, // 0
@@ -343,6 +356,85 @@ const uint16_t sprite_player[8][16] = { // Rotation 0 -> 359 = 0 -> 7
         0b0000000000000000  // 15
     }
 };
+#else
+const uint16_t sprite_player[8][8] = { // Rotation 0 -> 359 = 0 -> 7
+    {    // 0 = right
+        0b01111000, // 0
+        0b00111100, // 1
+        0b00011110, // 2
+        0b00011110, // 3
+        0b00011110, // 4
+        0b00011110, // 5
+        0b00111100, // 6
+        0b01111000  // 7
+    }, { // 1 = diagonal up right
+        0b00000000, // 0
+        0b01111100, // 1
+        0b11111110, // 2
+        0b01111110, // 3
+        0b00011110, // 4
+        0b00001110, // 5
+        0b00001110, // 6
+        0b00000100  // 7
+    }, { // 2 = up
+        0b00000000, // 0
+        0b00111100, // 1
+        0b01111110, // 2
+        0b11111111, // 3
+        0b11111111, // 4
+        0b11000011, // 5
+        0b10000001, // 6
+        0b00000000  // 7
+    }, { // 3 = diagonal up left
+        0b00000000, // 0
+        0b00111110, // 1
+        0b01111111, // 2
+        0b01111110, // 3
+        0b01111000, // 4
+        0b01110000, // 5
+        0b01110000, // 6
+        0b00100000  // 7
+    }, { // 4 = left
+        0b00011110, // 0
+        0b00111100, // 1
+        0b01111000, // 2
+        0b01111000, // 3
+        0b01111000, // 4
+        0b01111000, // 5
+        0b00111100, // 6
+        0b00011110  // 7
+    }, { // 5 = diagonal down left
+        0b00100000, // 0
+        0b01110000, // 1
+        0b01110000, // 2
+        0b01111000, // 3
+        0b01111110, // 4
+        0b01111111, // 5
+        0b00111110, // 6
+        0b00000000  // 7
+    }, { // 6 = down
+        0b00000000, // 0
+        0b10000001, // 1
+        0b11000011, // 2
+        0b11111111, // 3
+        0b11111111, // 4
+        0b01111110, // 5
+        0b00111100, // 6
+        0b00000000  // 7
+    }, { // 7 = diagonal down right
+        0b00000100, // 0
+        0b00001110, // 1
+        0b00001110, // 2
+        0b00011110, // 3
+        0b01111110, // 4
+        0b11111110, // 5
+        0b01111100, // 6
+        0b00000000  // 7
+    }
+};
+#endif
+GRect player_size;
+
 const uint16_t sprite_block[8] = {
     0b1111111111111111, // 0
     0b1111111111111111, // 1
@@ -359,20 +451,25 @@ void game_init(void);
 void game_deinit(void);
 static void game_timer(void *context);
 
-// Logic + Drawing
+// Update Handler
 static void game_update(Layer *layer, GContext *ctx);
 
+// Logic
 void game_logic_init(void);
 static void game_logic(void);
 static void game_logic_player(uint8_t player);
 static void game_logic_ball(void);
 
+// Drawing
 void game_draw_init(void);
 static void game_draw(Layer *layer, GContext *ctx);
 static void game_draw_base(Layer *layer, GContext *ctx, uint8_t player);
 static void game_draw_player(Layer *layer, GContext *ctx, uint8_t player);
 static void game_draw_ball(Layer *layer, GContext *ctx);
 static void game_draw_bitmap(Layer *layer, GContext *ctx, uint16_t pos_x, uint16_t pos_y, const uint16_t bitmap[], GRect bounds, GColor color);
+
+// Game Functions
+static GPoint get_player_position(uint8_t player);
 
 // Button Handling
 void game_button_config(Window *window);
@@ -415,6 +512,16 @@ void game_init(void) {
     player_colors[1] = GColorRed;
     player_colors[2] = GColorBlueMoon;
     player_colors[3] = GColorMintGreen;
+
+    // Setup Game State
+
+    player_alive[0] = player_alive[1] = player_alive[2] = player_alive[3] = true;
+
+    #if defined(PBL_PLATFORM_EMERY)
+    player_size = GRect(0, 0, 16, 16);
+    #else
+    player_size = GRect(0, 0, 8, 8);
+    #endif
 
     // Setup Game
     game_logic_init();
@@ -465,13 +572,15 @@ static void game_logic(void) {
 
 static void game_logic_player(uint8_t player) {
     // Player Control
-    if (player == Player_BottomLeft) {
+    if (player == Player_User) {
         if (button_up == true) {
             player_pos[player] -= player_speed;
         }
         if (button_down == true) {
             player_pos[player] += player_speed;
         }
+    } else {
+        // TODO: Simple AI
     }
 
     if (player_pos[player] > Player_PosRange) {
@@ -485,11 +594,103 @@ static void game_logic_ball(void) {
     ball_pos.x += ball_speed.x;
     ball_pos.y += ball_speed.y;
 
+    // Wall Reflection
     if (ball_pos.x <= 0 || ball_pos.x >= Canvas_Width) {
         ball_speed.x = -ball_speed.x;
+        return;
     } else if (ball_pos.y <= 0 || ball_pos.y >= Canvas_Height) {
         ball_speed.y = -ball_speed.y;
+        return;
     }
+
+    // Base Reflection and Damage
+    GPoint rel_pos = GPoint(ball_pos.x, ball_pos.y);
+
+    int8_t horizontal = 0; // 0 = not found, -1 = left, 1 = right
+    int8_t vertical = 0; // 0 = not found, -1 = up, 1 = down
+
+    if (ball_pos.x < Base_Size << 3) {
+        rel_pos.x = (uint16_t)ball_pos.x >> 3;
+        horizontal = -1;
+    } else if (ball_pos.x > Canvas_Width - (Base_Size << 3)) {
+        rel_pos.x = ((uint16_t)ball_pos.x - (Canvas_Width - (Base_Size << 3))) >> 3;
+        horizontal = 1;
+    }
+    if (ball_pos.y < Base_Size << 3) {
+        rel_pos.y = (uint16_t)ball_pos.y >> 3;
+        vertical = -1;
+    } else if (ball_pos.y > Canvas_Height - (Base_Size << 3)) {
+        rel_pos.y = ((uint16_t)ball_pos.y - (Canvas_Height - (Base_Size << 3))) >> 3;
+        vertical = 1;
+    }
+
+    if (horizontal != 0 && vertical != 0) {
+        // Determine Player
+        uint8_t player = 0;
+        if (horizontal < 0 && vertical < 0) {
+            player = Player_TopLeft;
+        } else if (horizontal > 0 && vertical < 0) {
+            player = Player_TopRight;
+        } else if (horizontal < 0 && vertical > 0) {
+            player = Player_BottomLeft;
+        } else if (horizontal > 0 && vertical > 0) {
+            player = Player_BottomRight;
+        }
+
+        if (((horizontal < 0 && rel_pos.x < Base_Inner_Size) || (horizontal > 0 && rel_pos.x > Base_Size - Base_Inner_Size)) && ((vertical < 0 && rel_pos.y < Base_Inner_Size) || (vertical > 0 && rel_pos.y > Base_Size - Base_Inner_Size))) { // If inside player's inner base
+            // Set player as dead
+            player_alive[player] = false;
+
+            // Reset ball
+            ball_pos.x = Canvas_Width >> 1;
+            ball_pos.y = Canvas_Height >> 1;
+            float angle = rand() % 360;
+            ball_speed.x = ball_speed_max * cos_lookup(DEG_TO_TRIGANGLE(angle)) / TRIG_MAX_RATIO;
+            ball_speed.y = ball_speed_max * sin_lookup(DEG_TO_TRIGANGLE(angle)) / TRIG_MAX_RATIO;
+
+            // TODO: Death animation
+        } else if ((player_damage[player][rel_pos.y]  >> rel_pos.x) & 1) { // If hit
+            player_damage[player][rel_pos.y] = player_damage[player][rel_pos.y] & ~(1 << rel_pos.x); // Deal damage (set as 0)
+
+            // Reflect
+            if ((horizontal > 0 && rel_pos.x < Base_Size >> 1) || (horizontal < 0 && rel_pos.x > Base_Size >> 1)) {
+                ball_speed.x = -ball_speed.x;
+            } else if ((vertical > 0 && rel_pos.y < Base_Size >> 1) || (vertical < 0 && rel_pos.y > Base_Size >> 1)) {
+                ball_speed.y = -ball_speed.y;
+            }
+            // TODO: Better reflection. Gets in loop every now and then.
+        }
+        return;
+    }
+
+    // Paddle Reflection
+    for (uint8_t i = 0; i < Player_Count; i++) {
+        GPoint p_pos = get_player_position(i);
+        if (ball_pos.x > p_pos.x && ball_pos.x < p_pos.x + player_size.size.w && ball_pos.y > p_pos.y && ball_pos.y < p_pos.y + player_size.size.h) { // Ball is inside player
+            switch (i) {
+                case Player_TopLeft:
+                case Player_BottomLeft:
+                    if (player_pos[i] < (Player_PosRange + Player_AngleGap) >> 1) {
+                        ball_speed.y = -ball_speed.y;
+                    }
+                    if (player_pos[i] > (Player_PosRange - Player_AngleGap) >> 1) {
+                        ball_speed.x = -ball_speed.x;
+                    }
+                    break;
+                case Player_TopRight:
+                case Player_BottomRight:
+                    if (player_pos[i] < (Player_PosRange + Player_AngleGap) >> 1) {
+                        ball_speed.x = -ball_speed.x;
+                    }
+                    if (player_pos[i] > (Player_PosRange - Player_AngleGap) >> 1) {
+                        ball_speed.y = -ball_speed.y;
+                    }
+                    break;
+            }
+            break;
+        }
+    }
+    // TODO: Better reflection to avoid infinite loops
 }
 
 // Game Drawing
@@ -586,86 +787,19 @@ static void game_draw_base(Layer *layer, GContext *ctx, uint8_t player) {
     #endif
 
     // Draw characters [16x16]
-    switch (player) {
-        // Knight
-        case Player_BottomLeft:
+    if (player_alive[player] == true) {
+        if (player == Player_User) { // Knight
             game_draw_bitmap(layer, ctx, offset_x + x * 8, offset_y + y * 8, sprite_knight, GRect(0, 0, 16, 16), color);
-            break;
-        // Castle
-        case Player_TopLeft:
-        case Player_TopRight:
-        case Player_BottomRight:
+        } else { // Castle
             game_draw_bitmap(layer, ctx, offset_x + x * 8, offset_y + y * 8, sprite_castle, GRect(0, 0, 16, 16), color);
-            break;
+        }
     }
 }
 
 static void game_draw_player(Layer *layer, GContext *ctx, uint8_t player) {
-    #if defined(PBL_PLATFORM_EMERY) || defined(PBL_PLATFORM_CHALK)
-    uint8_t dist = 9 * 8;
-    #else
-    uint8_t dist = 7 * 8;
-    #endif
+    if (player_alive[player] == false) return;
 
-    uint16_t offset_x = 0;
-    switch (player) {
-        case Player_TopRight:
-        case Player_BottomRight:
-            offset_x = Canvas_Width - dist - 16;
-            break;
-    }
-    uint16_t offset_y = 0;
-    switch (player) {
-        case Player_BottomLeft:
-        case Player_BottomRight:
-            offset_y = Canvas_Height - dist - 16;
-            break;
-    }
-
-    uint16_t x = 0;
-    switch (player) {
-        case Player_TopLeft:
-        case Player_BottomLeft:
-            if (player_pos[player] >= Player_PosRange >> 1) {
-                x = dist;
-            } else {
-                x = player_pos[player] / (Player_PosRange >> 1) * dist;
-            }
-            break;
-        case Player_TopRight:
-        case Player_BottomRight:
-            if (player_pos[player] >= Player_PosRange >> 1) {
-                x = (player_pos[player] - (Player_PosRange >> 1)) / (Player_PosRange >> 1) * dist;
-            }
-            break;
-    }
-    uint16_t y = 0;
-    switch (player) {
-        case Player_TopLeft:
-            if (player_pos[player] < Player_PosRange >> 1) {
-                y = dist;
-            } else {
-                y = (Player_PosRange - player_pos[player]) / (Player_PosRange >> 1) * dist;
-            }
-            break;
-        case Player_TopRight:
-            if (player_pos[player] >= Player_PosRange >> 1) {
-                y = dist;
-            } else {
-                y = player_pos[player] / (Player_PosRange >> 1) * dist;
-            }
-            break;
-        case Player_BottomLeft:
-            if (player_pos[player] >= Player_PosRange >> 1) {
-                y = (player_pos[player] - (Player_PosRange >> 1)) / (Player_PosRange >> 1) * dist;
-            }
-            break;
-        case Player_BottomRight:
-            if (player_pos[player] < Player_PosRange >> 1) {
-                y = ((Player_PosRange >> 1) - player_pos[player]) / (Player_PosRange >> 1) * dist;
-            }
-            break;
-    }
+    GPoint sprite_pos = get_player_position(player);
 
     uint8_t sprite = 0;
     if (player_pos[player] >= (Player_PosRange - Player_AngleGap) / 2 && player_pos[player] <= (Player_PosRange + Player_AngleGap) / 2) {
@@ -715,7 +849,7 @@ static void game_draw_player(Layer *layer, GContext *ctx, uint8_t player) {
         }
     }
 
-    game_draw_bitmap(layer, ctx, offset_x + x, offset_y + y, sprite_player[sprite], GRect(0, 0, 16, 16), player_colors[player]);
+    game_draw_bitmap(layer, ctx, sprite_pos.x, sprite_pos.y, sprite_player[sprite], player_size, player_colors[player]);
 }
 
 static void game_draw_ball(Layer *layer, GContext *ctx) {
@@ -753,6 +887,77 @@ static void game_draw_bitmap(Layer *layer, GContext *ctx, uint16_t pos_x, uint16
     }
 
     graphics_release_frame_buffer(ctx, fb);
+}
+
+// Game Functions
+
+static GPoint get_player_position(uint8_t player) {
+    uint16_t dist = (Base_Size + 1) << 3;
+
+    GPoint offset = GPoint(0, 0);
+    switch (player) {
+        case Player_TopRight:
+        case Player_BottomRight:
+            offset.x = Canvas_Width - dist - player_size.size.w;
+            break;
+    }
+    switch (player) {
+        case Player_BottomLeft:
+        case Player_BottomRight:
+            offset.y = Canvas_Height - dist - player_size.size.h;
+            break;
+    }
+
+    GPoint pos = GPoint(0, 0);
+
+    switch (player) {
+        case Player_TopLeft:
+        case Player_BottomLeft:
+            if (player_pos[player] >= Player_PosRange >> 1) {
+                pos.x = dist;
+            } else {
+                pos.x = player_pos[player] / (Player_PosRange >> 1) * dist;
+            }
+            break;
+        case Player_TopRight:
+        case Player_BottomRight:
+            if (player_pos[player] >= Player_PosRange >> 1) {
+                pos.x = (player_pos[player] - (Player_PosRange >> 1)) / (Player_PosRange >> 1) * dist;
+            }
+            break;
+    }
+
+    switch (player) {
+        case Player_TopLeft:
+            if (player_pos[player] < Player_PosRange >> 1) {
+                pos.y = dist;
+            } else {
+                pos.y = (Player_PosRange - player_pos[player]) / (Player_PosRange >> 1) * dist;
+            }
+            break;
+        case Player_TopRight:
+            if (player_pos[player] >= Player_PosRange >> 1) {
+                pos.y = dist;
+            } else {
+                pos.y = player_pos[player] / (Player_PosRange >> 1) * dist;
+            }
+            break;
+        case Player_BottomLeft:
+            if (player_pos[player] >= Player_PosRange >> 1) {
+                pos.y = (player_pos[player] - (Player_PosRange >> 1)) / (Player_PosRange >> 1) * dist;
+            }
+            break;
+        case Player_BottomRight:
+            if (player_pos[player] < Player_PosRange >> 1) {
+                pos.y = ((Player_PosRange >> 1) - player_pos[player]) / (Player_PosRange >> 1) * dist;
+            }
+            break;
+    }
+
+    pos.x += offset.x;
+    pos.y += offset.y;
+
+    return pos;
 }
 
 // Button Logic
