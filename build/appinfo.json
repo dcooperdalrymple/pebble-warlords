@@ -2,7 +2,9 @@
     "targetPlatforms": [
         "aplite", 
         "basalt", 
-        "chalk"
+        "chalk", 
+        "diorite", 
+        "emery"
     ], 
     "projectType": "native", 
     "name": "warlords", 

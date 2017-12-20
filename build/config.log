@@ -1,17 +1,39 @@
-# project  configured on Tue Dec 19 16:26:17 2017 by
+# project  configured on Tue Dec 19 21:21:31 2017 by
 # waf 1.7.11 (abi 98, python 2070df0 on linux2)
 # using /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/waf configure
 #
 ----------------------------------------
 Setting top to
-/home/ogrecooper/pebble-dev/apps/warlords
+/home/ogrecooper/repos/pebble-warlords
 ----------------------------------------
 Setting out to
-/home/ogrecooper/pebble-dev/apps/warlords/build
+/home/ogrecooper/repos/pebble-warlords/build
 ----------------------------------------
 Checking for program webpack
 /home/ogrecooper/.pebble-sdk/SDKs/current/node_modules/.bin/webpack
 find program=['webpack'] paths=['/home/ogrecooper/.pebble-sdk/SDKs/current/node_modules/.bin'] var='WEBPACK' -> '/home/ogrecooper/.pebble-sdk/SDKs/current/node_modules/.bin/webpack'
+----------------------------------------
+Found Pebble SDK for emery in:
+/home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/emery
+----------------------------------------
+Checking for program gcc,cc
+arm-none-eabi-gcc
+find program=['gcc', 'cc'] paths='' var='CC' -> 'arm-none-eabi-gcc'
+----------------------------------------
+Checking for program ar
+arm-none-eabi-ar
+find program=['ar'] paths='' var='AR' -> 'arm-none-eabi-ar'
+----------------------------------------
+Found Pebble SDK for diorite in:
+/home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/diorite
+----------------------------------------
+Checking for program gcc,cc
+arm-none-eabi-gcc
+find program=['gcc', 'cc'] paths='' var='CC' -> 'arm-none-eabi-gcc'
+----------------------------------------
+Checking for program ar
+arm-none-eabi-ar
+find program=['ar'] paths='' var='AR' -> 'arm-none-eabi-ar'
 ----------------------------------------
 Found Pebble SDK for chalk in:
 /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/chalk

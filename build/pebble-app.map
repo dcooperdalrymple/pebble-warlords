@@ -1,30 +1,29 @@
 Archive member included because of file (symbol)
 
 /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                              src/c/main.c.25.o (app_event_loop)
+                              src/c/main.c.41.o (app_event_loop)
 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubsf3.o)
-                              src/c/main.c.25.o (__aeabi_fadd)
+                              src/c/main.c.41.o (__aeabi_fsub)
 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivsf3.o)
-                              src/c/main.c.25.o (__aeabi_fmul)
+                              src/c/main.c.41.o (__aeabi_fmul)
 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_cmpsf2.o)
-                              src/c/main.c.25.o (__aeabi_fcmplt)
+                              src/c/main.c.41.o (__aeabi_fcmplt)
 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixsfsi.o)
-                              src/c/main.c.25.o (__aeabi_f2iz)
+                              src/c/main.c.41.o (__aeabi_f2iz)
+/home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixunssfsi.o)
+                              src/c/main.c.41.o (__aeabi_f2uiz)
 
 Allocating common symbols
 Common symbol       size              file
 
-ball_pos_x          0x4               src/c/main.c.25.o
-game_window         0x4               src/c/main.c.25.o
-ball_pos_y          0x4               src/c/main.c.25.o
-ball_speed          0x4               src/c/main.c.25.o
-ball_angle          0x4               src/c/main.c.25.o
-player_pos          0x4               src/c/main.c.25.o
-ball_color          0x1               src/c/main.c.25.o
-game_canvas         0x4               src/c/main.c.25.o
-ball_speed_sin      0x4               src/c/main.c.25.o
-ball_speed_cos      0x4               src/c/main.c.25.o
-ball_pos            0x4               src/c/main.c.25.o
+base_colors         0x4               src/c/main.c.41.o
+game_window         0x4               src/c/main.c.41.o
+player_colors       0x4               src/c/main.c.41.o
+ball_speed          0x8               src/c/main.c.41.o
+player_pos          0x10              src/c/main.c.41.o
+ball_color          0x1               src/c/main.c.41.o
+game_canvas         0x4               src/c/main.c.41.o
+ball_pos            0x8               src/c/main.c.41.o
 
 Discarded input sections
 
@@ -40,40 +39,22 @@ Discarded input sections
  .jcr           0x0000000000000000        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
  .tm_clone_table
                 0x0000000000000000        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
- .text          0x0000000000000000        0x0 src/c/main.c.25.o
- .bss           0x0000000000000000        0x0 src/c/main.c.25.o
+ .text          0x0000000000000000        0x0 src/c/main.c.41.o
+ .bss           0x0000000000000000        0x0 src/c/main.c.41.o
  .text.game_draw_init
-                0x0000000000000000       0x18 src/c/main.c.25.o
- .text.game_button_up_click
-                0x0000000000000000       0x10 src/c/main.c.25.o
- .text.game_button_up_release
-                0x0000000000000000       0x10 src/c/main.c.25.o
- .text.game_button_down_click
-                0x0000000000000000       0x10 src/c/main.c.25.o
- .text.game_button_down_release
-                0x0000000000000000       0x10 src/c/main.c.25.o
- .bss.button_down
-                0x0000000000000000        0x1 src/c/main.c.25.o
- .rodata.ball_speed_min
-                0x0000000000000000        0x4 src/c/main.c.25.o
- .rodata.ball_acceleration
-                0x0000000000000000        0x4 src/c/main.c.25.o
+                0x0000000000000000       0x18 src/c/main.c.41.o
+ .rodata.ball_speed_max
+                0x0000000000000000        0x4 src/c/main.c.41.o
  .rodata.ball_radius
-                0x0000000000000000        0x2 src/c/main.c.25.o
- .bss.button_up
-                0x0000000000000000        0x1 src/c/main.c.25.o
- .rodata.aiError
-                0x0000000000000000        0x4 src/c/main.c.25.o
- .data.player_speed
-                0x0000000000000000        0x4 src/c/main.c.25.o
- .rodata.aiReaction
-                0x0000000000000000        0x4 src/c/main.c.25.o
- .text          0x0000000000000000        0x0 aplite/appinfo.auto.c.25.o
- .bss           0x0000000000000000        0x0 aplite/appinfo.auto.c.25.o
- .text          0x0000000000000000        0x0 aplite/src/resource_ids.auto.c.25.o
- .bss           0x0000000000000000        0x0 aplite/src/resource_ids.auto.c.25.o
+                0x0000000000000000        0x2 src/c/main.c.41.o
+ .rodata.player_speed
+                0x0000000000000000        0x4 src/c/main.c.41.o
+ .text          0x0000000000000000        0x0 aplite/appinfo.auto.c.41.o
+ .bss           0x0000000000000000        0x0 aplite/appinfo.auto.c.41.o
+ .text          0x0000000000000000        0x0 aplite/src/resource_ids.auto.c.41.o
+ .bss           0x0000000000000000        0x0 aplite/src/resource_ids.auto.c.41.o
  .data.RESOURCE_ID_IMAGE_SHIELD_GREEN
-                0x0000000000000000        0x4 aplite/src/resource_ids.auto.c.25.o
+                0x0000000000000000        0x4 aplite/src/resource_ids.auto.c.41.o
  .bss           0x0000000000000000        0x0 /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
  .text.accel_data_service_subscribe__deprecated
                 0x0000000000000000        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
@@ -1208,6 +1189,7 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivsf3.o)
  .bss           0x0000000000000000        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_cmpsf2.o)
  .bss           0x0000000000000000        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixsfsi.o)
+ .bss           0x0000000000000000        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixunssfsi.o)
  .text          0x0000000000000000        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
  .bss           0x0000000000000000        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
  .eh_frame      0x0000000000000000        0x4 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
@@ -1229,9 +1211,9 @@ Linker script and memory map
 
 LOAD /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
 LOAD /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
-LOAD src/c/main.c.25.o
-LOAD aplite/appinfo.auto.c.25.o
-LOAD aplite/src/resource_ids.auto.c.25.o
+LOAD src/c/main.c.41.o
+LOAD aplite/appinfo.auto.c.41.o
+LOAD aplite/src/resource_ids.auto.c.41.o
 LOAD /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a
 START GROUP
 LOAD /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a
@@ -1242,7 +1224,7 @@ LOAD /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/
 
 .header         0x0000000000000000       0x82
  *(.pbl_header)
- .pbl_header    0x0000000000000000       0x82 aplite/appinfo.auto.c.25.o
+ .pbl_header    0x0000000000000000       0x82 aplite/appinfo.auto.c.41.o
                 0x0000000000000000                __pbl_app_info
 
 .note.gnu.build-id
@@ -1253,7 +1235,7 @@ LOAD /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/
  .note.gnu.build-id
                 0x0000000000000084       0x24 linker stubs
 
-.text           0x00000000000000a8      0xd68
+.text           0x00000000000000a8     0x1132
  *(.text)
  .text          0x00000000000000a8       0x14 /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
  .text          0x00000000000000bc      0x21c /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubsf3.o)
@@ -1294,192 +1276,230 @@ LOAD /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/
  .text          0x0000000000000664       0x4c /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixsfsi.o)
                 0x0000000000000664                __fixsfsi
                 0x0000000000000664                __aeabi_f2iz
+ .text          0x00000000000006b0       0x40 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixunssfsi.o)
+                0x00000000000006b0                __aeabi_f2uiz
+                0x00000000000006b0                __fixunssfsi
  *(.text.*)
+ .text.game_logic_player
+                0x00000000000006f0       0x70 src/c/main.c.41.o
  .text.game_button_sel_click
-                0x00000000000006b0       0x10 src/c/main.c.25.o
-                0x00000000000006b0                game_button_sel_click
+                0x0000000000000760       0x10 src/c/main.c.41.o
+                0x0000000000000760                game_button_sel_click
  .text.game_button_sel_release
-                0x00000000000006c0       0x10 src/c/main.c.25.o
-                0x00000000000006c0                game_button_sel_release
+                0x0000000000000770       0x10 src/c/main.c.41.o
+                0x0000000000000770                game_button_sel_release
+ .text.game_button_up_click
+                0x0000000000000780       0x10 src/c/main.c.41.o
+                0x0000000000000780                game_button_up_click
+ .text.game_button_up_release
+                0x0000000000000790       0x10 src/c/main.c.41.o
+                0x0000000000000790                game_button_up_release
+ .text.game_button_down_click
+                0x00000000000007a0       0x10 src/c/main.c.41.o
+                0x00000000000007a0                game_button_down_click
+ .text.game_button_down_release
+                0x00000000000007b0       0x10 src/c/main.c.41.o
+                0x00000000000007b0                game_button_down_release
  .text.game_button_config
-                0x00000000000006d0       0x3c src/c/main.c.25.o
-                0x00000000000006d0                game_button_config
- .text.game_logic_ball_update_angle
-                0x000000000000070c       0x98 src/c/main.c.25.o
+                0x00000000000007c0       0x50 src/c/main.c.41.o
+                0x00000000000007c0                game_button_config
  .text.game_timer
-                0x00000000000007a4       0x2c src/c/main.c.25.o
+                0x0000000000000810       0x2c src/c/main.c.41.o
  .text.game_draw_bitmap.isra.0
-                0x00000000000007d0       0xdc src/c/main.c.25.o
+                0x000000000000083c      0x11c src/c/main.c.41.o
  .text.game_draw_base
-                0x00000000000008ac      0x11c src/c/main.c.25.o
+                0x0000000000000958      0x160 src/c/main.c.41.o
+ .text.game_draw_player
+                0x0000000000000ab8      0x1b0 src/c/main.c.41.o
  .text.game_update
-                0x00000000000009c8      0x194 src/c/main.c.25.o
+                0x0000000000000c68      0x14c src/c/main.c.41.o
  .text.game_deinit
-                0x0000000000000b5c       0x2c src/c/main.c.25.o
-                0x0000000000000b5c                game_deinit
+                0x0000000000000db4       0x2c src/c/main.c.41.o
+                0x0000000000000db4                game_deinit
  .text.game_logic_init
-                0x0000000000000b88       0x78 src/c/main.c.25.o
-                0x0000000000000b88                game_logic_init
+                0x0000000000000de0       0xa0 src/c/main.c.41.o
+                0x0000000000000de0                game_logic_init
  .text.game_init
-                0x0000000000000c00       0x90 src/c/main.c.25.o
-                0x0000000000000c00                game_init
+                0x0000000000000e80       0xc0 src/c/main.c.41.o
+                0x0000000000000e80                game_init
  .text.startup.main
-                0x0000000000000c90       0x12 src/c/main.c.25.o
-                0x0000000000000c90                main
- *fill*         0x0000000000000ca2        0x2 
+                0x0000000000000f40       0x12 src/c/main.c.41.o
+                0x0000000000000f40                main
+ *fill*         0x0000000000000f52        0x2 
  .text.app_event_loop
-                0x0000000000000ca4        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000ca4                app_event_loop
+                0x0000000000000f54        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000f54                app_event_loop
  .text.app_timer_register
-                0x0000000000000cb0        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000cb0                app_timer_register
+                0x0000000000000f60        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000f60                app_timer_register
  .text.cos_lookup
-                0x0000000000000cbc        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000cbc                cos_lookup
+                0x0000000000000f6c        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000f6c                cos_lookup
  .text.graphics_fill_circle
-                0x0000000000000cc8        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000cc8                graphics_fill_circle
+                0x0000000000000f78        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000f78                graphics_fill_circle
  .text.graphics_fill_rect
-                0x0000000000000cd4        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000cd4                graphics_fill_rect
+                0x0000000000000f84        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000f84                graphics_fill_rect
  .text.layer_add_child
-                0x0000000000000ce0        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000ce0                layer_add_child
+                0x0000000000000f90        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000f90                layer_add_child
  .text.layer_create
-                0x0000000000000cec        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000cec                layer_create
+                0x0000000000000f9c        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000f9c                layer_create
  .text.layer_destroy
-                0x0000000000000cf8        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000cf8                layer_destroy
+                0x0000000000000fa8        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000fa8                layer_destroy
  .text.layer_get_bounds
-                0x0000000000000d04        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000d04                layer_get_bounds
+                0x0000000000000fb4        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000fb4                layer_get_bounds
  .text.layer_mark_dirty
-                0x0000000000000d10        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000d10                layer_mark_dirty
+                0x0000000000000fc0        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000fc0                layer_mark_dirty
  .text.layer_set_update_proc
-                0x0000000000000d1c        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000d1c                layer_set_update_proc
- .text.rand     0x0000000000000d28        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000d28                rand
+                0x0000000000000fcc        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000fcc                layer_set_update_proc
+ .text.rand     0x0000000000000fd8        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000fd8                rand
  .text.sin_lookup
-                0x0000000000000d34        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000d34                sin_lookup
+                0x0000000000000fe4        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000fe4                sin_lookup
  .text.window_create
-                0x0000000000000d40        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000d40                window_create
+                0x0000000000000ff0        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000ff0                window_create
  .text.window_destroy
-                0x0000000000000d4c        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000d4c                window_destroy
+                0x0000000000000ffc        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000000ffc                window_destroy
  .text.window_get_root_layer
-                0x0000000000000d58        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000d58                window_get_root_layer
+                0x0000000000001008        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000001008                window_get_root_layer
  .text.window_set_click_config_provider
-                0x0000000000000d64        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000d64                window_set_click_config_provider
+                0x0000000000001014        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000001014                window_set_click_config_provider
  .text.window_stack_push
-                0x0000000000000d70        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000d70                window_stack_push
+                0x0000000000001020        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000001020                window_stack_push
  .text.window_raw_click_subscribe
-                0x0000000000000d7c        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000d7c                window_raw_click_subscribe
+                0x000000000000102c        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x000000000000102c                window_raw_click_subscribe
  .text.graphics_release_frame_buffer
-                0x0000000000000d88        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000d88                graphics_release_frame_buffer
+                0x0000000000001038        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000001038                graphics_release_frame_buffer
  .text.graphics_context_set_fill_color
-                0x0000000000000d94        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000d94                graphics_context_set_fill_color
+                0x0000000000001044        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000001044                graphics_context_set_fill_color
  .text.graphics_capture_frame_buffer
-                0x0000000000000da0        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000da0                graphics_capture_frame_buffer
+                0x0000000000001050        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x0000000000001050                graphics_capture_frame_buffer
  .text.gbitmap_get_data_row_info
-                0x0000000000000dac        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
-                0x0000000000000dac                gbitmap_get_data_row_info
+                0x000000000000105c        0xc /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+                0x000000000000105c                gbitmap_get_data_row_info
  *(.rodata)
- .rodata        0x0000000000000db8       0x14 src/c/main.c.25.o
+ .rodata        0x0000000000001068       0x10 src/c/main.c.41.o
  *(.rodata*)
  .rodata.sprite_castle
-                0x0000000000000dcc       0x20 src/c/main.c.25.o
-                0x0000000000000dcc                sprite_castle
- .rodata.CSWTCH.39
-                0x0000000000000dec        0x3 src/c/main.c.25.o
- *fill*         0x0000000000000def        0x1 
+                0x0000000000001078       0x20 src/c/main.c.41.o
+                0x0000000000001078                sprite_castle
+ .rodata.sprite_block
+                0x0000000000001098       0x10 src/c/main.c.41.o
+                0x0000000000001098                sprite_block
+ .rodata.CSWTCH.36
+                0x00000000000010a8        0x4 src/c/main.c.41.o
  .rodata.sprite_knight
-                0x0000000000000df0       0x20 src/c/main.c.25.o
-                0x0000000000000df0                sprite_knight
+                0x00000000000010ac       0x20 src/c/main.c.41.o
+                0x00000000000010ac                sprite_knight
+ .rodata.CSWTCH.38
+                0x00000000000010cc        0x3 src/c/main.c.41.o
+ *fill*         0x00000000000010cf        0x1 
+ .rodata.sprite_player
+                0x00000000000010d0      0x100 src/c/main.c.41.o
+                0x00000000000010d0                sprite_player
+ .rodata.CSWTCH.33
+                0x00000000000011d0        0x3 src/c/main.c.41.o
+ .rodata.CSWTCH.29
+                0x00000000000011d3        0x3 src/c/main.c.41.o
+ .rodata.CSWTCH.40
+                0x00000000000011d6        0x4 src/c/main.c.41.o
 
-.glue_7         0x0000000000000e10        0x0
+.glue_7         0x00000000000011dc        0x0
  .glue_7        0x0000000000000000        0x0 linker stubs
 
-.glue_7t        0x0000000000000e10        0x0
+.glue_7t        0x00000000000011dc        0x0
  .glue_7t       0x0000000000000000        0x0 linker stubs
 
-.vfp11_veneer   0x0000000000000e10        0x0
+.vfp11_veneer   0x00000000000011dc        0x0
  .vfp11_veneer  0x0000000000000000        0x0 linker stubs
 
-.v4_bx          0x0000000000000e10        0x0
+.v4_bx          0x00000000000011dc        0x0
  .v4_bx         0x0000000000000000        0x0 linker stubs
 
-.iplt           0x0000000000000e10        0x0
+.iplt           0x00000000000011dc        0x0
  .iplt          0x0000000000000000        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.rel.dyn        0x0000000000000e10        0x0
+.rel.dyn        0x00000000000011dc        0x0
  .rel.iplt      0x0000000000000000        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
  .rel.got       0x0000000000000000        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.data           0x0000000000000e10        0x4
+.data           0x00000000000011dc       0x24
  *(.data)
- .data          0x0000000000000e10        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
- .data          0x0000000000000e10        0x4 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
-                0x0000000000000e10                __dso_handle
- .data          0x0000000000000e14        0x0 src/c/main.c.25.o
- .data          0x0000000000000e14        0x0 aplite/appinfo.auto.c.25.o
- .data          0x0000000000000e14        0x0 aplite/src/resource_ids.auto.c.25.o
- .data          0x0000000000000e14        0x0 /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
- .data          0x0000000000000e14        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubsf3.o)
- .data          0x0000000000000e14        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivsf3.o)
- .data          0x0000000000000e14        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_cmpsf2.o)
- .data          0x0000000000000e14        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixsfsi.o)
- .data          0x0000000000000e14        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
- .data          0x0000000000000e14        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
+ .data          0x00000000000011dc        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
+ .data          0x00000000000011dc        0x4 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
+                0x00000000000011dc                __dso_handle
+ .data          0x00000000000011e0        0x0 src/c/main.c.41.o
+ .data          0x00000000000011e0        0x0 aplite/appinfo.auto.c.41.o
+ .data          0x00000000000011e0        0x0 aplite/src/resource_ids.auto.c.41.o
+ .data          0x00000000000011e0        0x0 /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
+ .data          0x00000000000011e0        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubsf3.o)
+ .data          0x00000000000011e0        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivsf3.o)
+ .data          0x00000000000011e0        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_cmpsf2.o)
+ .data          0x00000000000011e0        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixsfsi.o)
+ .data          0x00000000000011e0        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixunssfsi.o)
+ .data          0x00000000000011e0        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
+ .data          0x00000000000011e0        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
  *(.data.*)
+ .data.player_damage
+                0x00000000000011e0       0x20 src/c/main.c.41.o
+                0x00000000000011e0                player_damage
 
-.igot.plt       0x0000000000000e14        0x0
+.igot.plt       0x0000000000001200        0x0
  .igot.plt      0x0000000000000000        0x0 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.got            0x0000000000000e14       0x28
- .got           0x0000000000000e14       0x28 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
+.got            0x0000000000001200       0x20
+ .got           0x0000000000001200       0x20 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.got.plt        0x0000000000000e3c        0xc
- .got.plt       0x0000000000000e3c        0xc /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
-                0x0000000000000e3c                _GLOBAL_OFFSET_TABLE_
+.got.plt        0x0000000000001220        0xc
+ .got.plt       0x0000000000001220        0xc /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
+                0x0000000000001220                _GLOBAL_OFFSET_TABLE_
 
-.bss            0x0000000000000e48       0x30
+.bss            0x000000000000122c       0x38
  *(.bss)
  *(.bss.*)
+ .bss.button_down
+                0x000000000000122c        0x1 src/c/main.c.41.o
+                0x000000000000122c                button_down
+ .bss.button_up
+                0x000000000000122d        0x1 src/c/main.c.41.o
+                0x000000000000122d                button_up
  .bss.button_sel
-                0x0000000000000e48        0x1 src/c/main.c.25.o
-                0x0000000000000e48                button_sel
- *fill*         0x0000000000000e49        0x3 
- COMMON         0x0000000000000e4c       0x2c src/c/main.c.25.o
-                0x0000000000000e4c                ball_pos_x
-                0x0000000000000e50                game_window
-                0x0000000000000e54                ball_pos_y
-                0x0000000000000e58                ball_speed
-                0x0000000000000e5c                ball_angle
-                0x0000000000000e60                player_pos
-                0x0000000000000e64                ball_color
-                0x0000000000000e68                game_canvas
-                0x0000000000000e6c                ball_speed_sin
-                0x0000000000000e70                ball_speed_cos
-                0x0000000000000e74                ball_pos
+                0x000000000000122e        0x1 src/c/main.c.41.o
+                0x000000000000122e                button_sel
+ *fill*         0x000000000000122f        0x1 
+ COMMON         0x0000000000001230       0x34 src/c/main.c.41.o
+                0x0000000000001230                base_colors
+                0x0000000000001234                game_window
+                0x0000000000001238                player_colors
+                0x000000000000123c                ball_speed
+                0x0000000000001244                player_pos
+                0x0000000000001254                ball_color
+                0x0000000000001258                game_canvas
+                0x000000000000125c                ball_pos
 
 DISCARD
  libc.a(*)
  libm.a(*)
  libgcc.a(*)
  *(.eh_frame)
-OUTPUT(/home/ogrecooper/pebble-dev/apps/warlords/build/aplite/pebble-app.elf elf32-littlearm)
+OUTPUT(/home/ogrecooper/repos/pebble-warlords/build/aplite/pebble-app.elf elf32-littlearm)
 
 .ARM.attributes
                 0x0000000000000000       0x27
@@ -1488,11 +1508,11 @@ OUTPUT(/home/ogrecooper/pebble-dev/apps/warlords/build/aplite/pebble-app.elf elf
  .ARM.attributes
                 0x0000000000000019       0x29 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
  .ARM.attributes
-                0x0000000000000042       0x33 src/c/main.c.25.o
+                0x0000000000000042       0x33 src/c/main.c.41.o
  .ARM.attributes
-                0x0000000000000075       0x33 aplite/appinfo.auto.c.25.o
+                0x0000000000000075       0x33 aplite/appinfo.auto.c.41.o
  .ARM.attributes
-                0x00000000000000a8       0x33 aplite/src/resource_ids.auto.c.25.o
+                0x00000000000000a8       0x33 aplite/src/resource_ids.auto.c.41.o
  .ARM.attributes
                 0x00000000000000db       0x21 /home/ogrecooper/.pebble-sdk/SDKs/current/sdk-core/pebble/aplite/lib/libpebble.a(tmp7jpKUopebble.o)
  .ARM.attributes
@@ -1504,74 +1524,81 @@ OUTPUT(/home/ogrecooper/pebble-dev/apps/warlords/build/aplite/pebble-app.elf elf
  .ARM.attributes
                 0x0000000000000147       0x19 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixsfsi.o)
  .ARM.attributes
-                0x0000000000000160       0x29 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
+                0x0000000000000160       0x19 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixunssfsi.o)
  .ARM.attributes
-                0x0000000000000189       0x19 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
+                0x0000000000000179       0x29 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
+ .ARM.attributes
+                0x00000000000001a2       0x19 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
 
 .comment        0x0000000000000000       0x4e
  .comment       0x0000000000000000       0x4e /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
                                          0x4f (size before relaxing)
- .comment       0x0000000000000000       0x4f src/c/main.c.25.o
- .comment       0x0000000000000000       0x4f aplite/appinfo.auto.c.25.o
- .comment       0x0000000000000000       0x4f aplite/src/resource_ids.auto.c.25.o
+ .comment       0x0000000000000000       0x4f src/c/main.c.41.o
+ .comment       0x0000000000000000       0x4f aplite/appinfo.auto.c.41.o
+ .comment       0x0000000000000000       0x4f aplite/src/resource_ids.auto.c.41.o
  .comment       0x0000000000000000       0x4f /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
 
-.debug_info     0x0000000000000000     0x1673
- .debug_info    0x0000000000000000      0xffc src/c/main.c.25.o
- .debug_info    0x0000000000000ffc      0x31a aplite/appinfo.auto.c.25.o
- .debug_info    0x0000000000001316       0x81 aplite/src/resource_ids.auto.c.25.o
- .debug_info    0x0000000000001397       0xb7 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubsf3.o)
- .debug_info    0x000000000000144e       0xb7 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivsf3.o)
- .debug_info    0x0000000000001505       0xb7 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_cmpsf2.o)
- .debug_info    0x00000000000015bc       0xb7 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixsfsi.o)
+.debug_info     0x0000000000000000     0x1907
+ .debug_info    0x0000000000000000     0x11d9 src/c/main.c.41.o
+ .debug_info    0x00000000000011d9      0x31a aplite/appinfo.auto.c.41.o
+ .debug_info    0x00000000000014f3       0x81 aplite/src/resource_ids.auto.c.41.o
+ .debug_info    0x0000000000001574       0xb7 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubsf3.o)
+ .debug_info    0x000000000000162b       0xb7 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivsf3.o)
+ .debug_info    0x00000000000016e2       0xb7 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_cmpsf2.o)
+ .debug_info    0x0000000000001799       0xb7 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixsfsi.o)
+ .debug_info    0x0000000000001850       0xb7 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixunssfsi.o)
 
-.debug_abbrev   0x0000000000000000      0x548
- .debug_abbrev  0x0000000000000000      0x416 src/c/main.c.25.o
- .debug_abbrev  0x0000000000000416       0x9e aplite/appinfo.auto.c.25.o
- .debug_abbrev  0x00000000000004b4       0x44 aplite/src/resource_ids.auto.c.25.o
- .debug_abbrev  0x00000000000004f8       0x14 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubsf3.o)
- .debug_abbrev  0x000000000000050c       0x14 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivsf3.o)
- .debug_abbrev  0x0000000000000520       0x14 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_cmpsf2.o)
- .debug_abbrev  0x0000000000000534       0x14 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixsfsi.o)
+.debug_abbrev   0x0000000000000000      0x54a
+ .debug_abbrev  0x0000000000000000      0x404 src/c/main.c.41.o
+ .debug_abbrev  0x0000000000000404       0x9e aplite/appinfo.auto.c.41.o
+ .debug_abbrev  0x00000000000004a2       0x44 aplite/src/resource_ids.auto.c.41.o
+ .debug_abbrev  0x00000000000004e6       0x14 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubsf3.o)
+ .debug_abbrev  0x00000000000004fa       0x14 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivsf3.o)
+ .debug_abbrev  0x000000000000050e       0x14 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_cmpsf2.o)
+ .debug_abbrev  0x0000000000000522       0x14 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixsfsi.o)
+ .debug_abbrev  0x0000000000000536       0x14 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixunssfsi.o)
 
-.debug_loc      0x0000000000000000      0x40c
- .debug_loc     0x0000000000000000      0x40c src/c/main.c.25.o
+.debug_loc      0x0000000000000000      0x6bd
+ .debug_loc     0x0000000000000000      0x6bd src/c/main.c.41.o
 
-.debug_aranges  0x0000000000000000      0x150
+.debug_aranges  0x0000000000000000      0x178
  .debug_aranges
-                0x0000000000000000       0xa0 src/c/main.c.25.o
+                0x0000000000000000       0xa8 src/c/main.c.41.o
  .debug_aranges
-                0x00000000000000a0       0x18 aplite/appinfo.auto.c.25.o
+                0x00000000000000a8       0x18 aplite/appinfo.auto.c.41.o
  .debug_aranges
-                0x00000000000000b8       0x18 aplite/src/resource_ids.auto.c.25.o
+                0x00000000000000c0       0x18 aplite/src/resource_ids.auto.c.41.o
  .debug_aranges
-                0x00000000000000d0       0x20 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubsf3.o)
+                0x00000000000000d8       0x20 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubsf3.o)
  .debug_aranges
-                0x00000000000000f0       0x20 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivsf3.o)
+                0x00000000000000f8       0x20 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivsf3.o)
  .debug_aranges
-                0x0000000000000110       0x20 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_cmpsf2.o)
+                0x0000000000000118       0x20 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_cmpsf2.o)
  .debug_aranges
-                0x0000000000000130       0x20 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixsfsi.o)
+                0x0000000000000138       0x20 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixsfsi.o)
+ .debug_aranges
+                0x0000000000000158       0x20 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixunssfsi.o)
 
-.debug_ranges   0x0000000000000000      0x148
- .debug_ranges  0x0000000000000000      0x148 src/c/main.c.25.o
+.debug_ranges   0x0000000000000000      0x118
+ .debug_ranges  0x0000000000000000      0x118 src/c/main.c.41.o
 
-.debug_line     0x0000000000000000      0x913
- .debug_line    0x0000000000000000      0x323 src/c/main.c.25.o
- .debug_line    0x0000000000000323      0x129 aplite/appinfo.auto.c.25.o
- .debug_line    0x000000000000044c       0xd0 aplite/src/resource_ids.auto.c.25.o
- .debug_line    0x000000000000051c      0x128 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubsf3.o)
- .debug_line    0x0000000000000644      0x149 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivsf3.o)
- .debug_line    0x000000000000078d      0x100 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_cmpsf2.o)
- .debug_line    0x000000000000088d       0x86 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixsfsi.o)
+.debug_line     0x0000000000000000      0xa24
+ .debug_line    0x0000000000000000      0x3b2 src/c/main.c.41.o
+ .debug_line    0x00000000000003b2      0x129 aplite/appinfo.auto.c.41.o
+ .debug_line    0x00000000000004db       0xd0 aplite/src/resource_ids.auto.c.41.o
+ .debug_line    0x00000000000005ab      0x128 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubsf3.o)
+ .debug_line    0x00000000000006d3      0x149 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivsf3.o)
+ .debug_line    0x000000000000081c      0x100 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_cmpsf2.o)
+ .debug_line    0x000000000000091c       0x86 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixsfsi.o)
+ .debug_line    0x00000000000009a2       0x82 /home/ogrecooper/pebble-dev/pebble-sdk-4.5-linux64/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixunssfsi.o)
 
-.debug_str      0x0000000000000000      0x963
- .debug_str     0x0000000000000000      0x6ef src/c/main.c.25.o
-                                        0x77a (size before relaxing)
- .debug_str     0x00000000000006ef      0x236 aplite/appinfo.auto.c.25.o
-                                        0x31e (size before relaxing)
- .debug_str     0x0000000000000925       0x3e aplite/src/resource_ids.auto.c.25.o
-                                        0x107 (size before relaxing)
+.debug_str      0x0000000000000000      0x95b
+ .debug_str     0x0000000000000000      0x6e7 src/c/main.c.41.o
+                                        0x76d (size before relaxing)
+ .debug_str     0x00000000000006e7      0x236 aplite/appinfo.auto.c.41.o
+                                        0x31b (size before relaxing)
+ .debug_str     0x000000000000091d       0x3e aplite/src/resource_ids.auto.c.41.o
+                                        0x104 (size before relaxing)
 
-.debug_frame    0x0000000000000000      0x1b4
- .debug_frame   0x0000000000000000      0x1b4 src/c/main.c.25.o
+.debug_frame    0x0000000000000000      0x1dc
+ .debug_frame   0x0000000000000000      0x1dc src/c/main.c.41.o
