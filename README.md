@@ -1,7 +1,7 @@
 # pebble-warlords
 Port of Atari's Warlords to Pebble watches. Pebble, Pebble Time, and Pebble Time Round supported.
 
-This app is still in its infancy. Please use with caution.
+![Pebble Warlords Screenshot](screenshots/screenshot-1.png "Screenshot of the Pebble Warlords watch game")
 
 ## Prerequisites
 Due to the acquisition of Pebble by Fitbit and uncertainty of the future of CloudPebble, it was decided to rely on a native installation of the Pebble SDK for compilation. And since I wanted to make this app as simple as possible and low-level, no 3rd party sdks/engines were used in tandem with the Pebble SDK.
